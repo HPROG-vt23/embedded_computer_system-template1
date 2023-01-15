@@ -84,6 +84,33 @@
 #define PCINT1_vect 0x04 /* Pin change interrupt vector 0 (for I/O-port C). */
 #define PCINT2_vect 0x06 /* Pin change interrupt vector 0 (for I/O-port D). */
 
+#define PORTB0 0 /* Bit number for pin 0 at I/O port B. */
+#define PORTB1 1 /* Bit number for pin 1 at I/O port B. */
+#define PORTB2 2 /* Bit number for pin 2 at I/O port B. */
+#define PORTB3 3 /* Bit number for pin 3 at I/O port B. */
+#define PORTB4 4 /* Bit number for pin 4 at I/O port B. */
+#define PORTB5 5 /* Bit number for pin 5 at I/O port B. */
+#define PORTB6 6 /* Bit number for pin 6 at I/O port B. */
+#define PORTB7 7 /* Bit number for pin 7 at I/O port B. */
+
+#define PORTC0 0 /* Bit number for pin 0 at I/O port C. */
+#define PORTC1 1 /* Bit number for pin 1 at I/O port C. */
+#define PORTC2 2 /* Bit number for pin 2 at I/O port C. */
+#define PORTC3 3 /* Bit number for pin 3 at I/O port C. */
+#define PORTC4 4 /* Bit number for pin 4 at I/O port C. */
+#define PORTC5 5 /* Bit number for pin 5 at I/O port C. */
+#define PORTC6 6 /* Bit number for pin 6 at I/O port C. */
+#define PORTC7 7 /* Bit number for pin 7 at I/O port C. */
+
+#define PORTD0 0 /* Bit number for pin 0 at I/O port D. */
+#define PORTD1 1 /* Bit number for pin 1 at I/O port D. */
+#define PORTD2 2 /* Bit number for pin 2 at I/O port D. */
+#define PORTD3 3 /* Bit number for pin 3 at I/O port D. */
+#define PORTD4 4 /* Bit number for pin 4 at I/O port D. */
+#define PORTD5 5 /* Bit number for pin 5 at I/O port D. */
+#define PORTD6 6 /* Bit number for pin 6 at I/O port D. */
+#define PORTD7 7 /* Bit number for pin 7 at I/O port D. */
+
 #define R0  0x00 /* Address for CPU register R0. */
 #define R1  0x01 /* Address for CPU register R1. */
 #define R2  0x02 /* Address for CPU register R2. */
@@ -122,7 +149,8 @@
 #define CPU_REGISTER_DATA_WIDTH    8  /* 8 bit data width per CPU register. */
 #define IO_REGISTER_DATA_WIDTH     8  /* 8 bit data width per I/O location. */
 
-#define I 4 /* Interrupt flag in status register. */
+#define I 5 /* Interrupt flag in status register. */
+#define S 4 /* Signed flag in status register. */
 #define N 3 /* Negative flag in status register. */
 #define Z 2 /* Zero flag in status register. */
 #define V 1 /* Overflow flag in status register. */

@@ -5,20 +5,20 @@
 #include "control_unit.h"
 
 /* Static variables: */
-static uint32_t ir;    /* Instruction register, stores next instruction to execute. */
-static uint8_t pc;     /* Program counter, stores address to next instruction to fetch. */
-static uint8_t mar;    /* Memory address register, stores address for current instruction. */
-static uint8_t sr;     /* Status register, stores status bits INZVC. */
+static uint32_t ir; /* Instruction register, stores next instruction to execute. */
+static uint8_t pc;  /* Program counter, stores address to next instruction to fetch. */
+static uint8_t mar; /* Memory address register, stores address for current instruction. */
+static uint8_t sr;  /* Status register, stores status bits ISNZVC. */
 
 static uint8_t op_code; /* Stores OP-code, for example LDI, OUT, JMP etc. */
 static uint8_t op1;     /* Stores first operand, most often a destination. */
 static uint8_t op2;     /* Stores second operand, most often a value or read address. */
 
-static uint8_t reg[CPU_REGISTER_ADDRESS_WIDTH]; /* CPU-registers R0 - R31. */
 static enum cpu_state state;                    /* Stores current state. */
+static uint8_t reg[CPU_REGISTER_ADDRESS_WIDTH]; /* CPU-registers R0 - R31. */
 
 /* Temporary memories: */
-static uint8_t data_memory[2000];        /* Contains I/O-addresses and stores static variables. */
+static uint8_t data_memory[2000]; /* Contains I/O-addresses and stores static variables. */
 
 const static uint32_t program_memory[] = /* Program memory, stores code. */
 {
@@ -54,14 +54,17 @@ void control_unit_run_next_state(void)
    {
       case CPU_STATE_FETCH:
       {
+  
       }
       case CPU_STATE_DECODE:
       {        
+         
       }
       case CPU_STATE_EXECUTE:
       {
+       
       }
-      default:                      /* System reset if error occurs. */
+      default: /* System reset if error occurs. */
       {
          control_unit_reset();
          break;
@@ -102,7 +105,7 @@ void control_unit_print(void)
    printf("%s ", get_binary((ir >> 8) & 0xFF, 8));
    printf("%s\n", get_binary(ir & 0xFF, 8));
 
-   printf("Status register (INZVC):\t\t\t%s\n\n", get_binary(sr, 5));
+   printf("Status register (ISNZVC):\t\t\t%s\n\n", get_binary(sr, 6));
 
    printf("Content in CPU register R16:\t\t\t%s\n", get_binary(reg[R16], 8));
    printf("Content in CPU register R24:\t\t\t%s\n\n", get_binary(reg[R24], 8));
